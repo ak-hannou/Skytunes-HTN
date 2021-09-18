@@ -1,5 +1,5 @@
 import "./App.css";
-import { TextField, Button } from "@mui/material";
+import { TextField } from "@mui/material";
 import { Gradient } from "react-gradient";
 import Logo from "./logo.svg";
 
@@ -27,7 +27,7 @@ function App() {
         >
           <div style={{ display: "flex", alignItems: 'center', justifyContent: "space-between" }}>
             <img style={{height: 250, width: 250}} src={Logo} alt="skytunes logo" />
-            <h3 style={{marginLeft: 100, textAlign: 'right', color: '#OO2966'}}>music from your <br/> environment.</h3>
+            <h3 style={{marginLeft: 100, textAlign: 'right', color: '#002966'}}>music from your <br/> environment</h3>
           </div>
 
           <div style={{ display: "flex", justifyContent: "space-between" }}>
