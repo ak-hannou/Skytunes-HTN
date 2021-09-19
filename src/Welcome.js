@@ -126,7 +126,7 @@ function Welcome() {
                 style={{
                   height: 50,
                   position: "relative",
-                  top: 25,
+                  top: 30,
                   borderRadius: 25,
                   textTransform: "none",
                   backgroundColor: "#f8f0e3",

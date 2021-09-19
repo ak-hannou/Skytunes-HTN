@@ -13,7 +13,6 @@ const gradients = [
 
 export function Player(props) {
         
-    console.log(props)
 
         return(
             <div className="App">
