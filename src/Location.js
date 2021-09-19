@@ -273,7 +273,6 @@ export function Location(props) {
         navigator.geolocation.getCurrentPosition(function(position){
             lon = (position.coords.longitude);
             lat= (position.coords.latitude);
-            
   
         });
   
@@ -285,6 +284,10 @@ export function Location(props) {
       .then(res => res.json())
       .then(
         (result) => {
+          console.log("latitude = "+lat)
+          console.log("longitude = "+lon)
+          console.log("temperature = " +(result.main.temp-273.15))
+          console.log("weather id = "+result.weather[0].id)
           setIsLoaded(true);
           setTemperature(result.main.temp);
           setIcon(result.weather[0].icon);

@@ -107,40 +107,7 @@ function Welcome() {
               nature's <br /> music
             </h3>
           </div>
-          <div style={{ justifyContent: "space-between" }}>
-            <p
-              style={{
-                marginTop: 40,
-                textAlign: "centre",
-                color: "#f8f0e3",
-                zIndex: 100,
-              }}
-            >
-              Connect your Spotify and location to get started
-            </p>
-
-            <div style={{ display: "flex", flexDirection: "column"}}>
-              
-              <Button
-                variant="contained"
-                style={{
-                  height: 50,
-                  position: "relative",
-                  top: 30,
-                  borderRadius: 25,
-                  textTransform: "none",
-                  backgroundColor: "#f8f0e3",
-                  color: "#002966",
-                  fontSize: 15,
-                }}
-                startIcon={
-                  <img style={{ height: 50, width: 50 }} src={spotifyLogo} />
-                }
-              >
-                Connect to Spotify
-              </Button>
-            </div>
-          </div>
+          
          
          
           {/* <SpotifyAuth
@@ -152,19 +119,13 @@ function Welcome() {
             /> */}
             
           {token ? (
+            
              <Location lat={lat} lon={lon} token={token}/>
+             
             // <Redirect push to={{pathname: "/player", state: {token: token}}}/>
           ) : (
-            // Display the login page
-            <SpotifyAuth
-              redirectUri="http://localhost:3000/Welcome"
-              clientID="2707363467a54d36b4f113d79313df97"
-              scopes={scopes}
-              //btnClassName={'spotify-button'}
-               // either style will work
-            />
-          )}
-          {/* <Button  variant="contained"
+            
+            <Button  variant="contained"
                 style={{
                   height: 50,
                   marginTop: 15,
@@ -179,7 +140,18 @@ function Welcome() {
               scopes={scopes}
               noLogo={true}
                // either style will work
-            /></Button> */}
+            /></Button> 
+            // Display the login page
+            // <SpotifyAuth
+            //   redirectUri="http://localhost:3000/Welcome"
+            //   clientID="2707363467a54d36b4f113d79313df97"
+            //   scopes={scopes}
+            //   noLogo={true}
+            //   //btnClassName={'spotify-button'}
+            //    // either style will work
+            // />
+          )}
+           
 
         </Gradient>
       </header>

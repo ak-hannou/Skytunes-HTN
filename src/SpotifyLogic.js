@@ -11,9 +11,9 @@ let playlist_id ='';
 export function SpotifyLogic(props) {
 
         let user_id ='';
-        let danceability = props.dance;
-        let valence = props.valence;
-        let energy = props.energy;
+        let danceability = [0.7,1]
+        let valence = [0.6, 1];
+        let energy = [0.7,1];
         let artist = []
         let tracksForNewPlaylist = [];
         console.log(props)
@@ -61,7 +61,6 @@ export function SpotifyLogic(props) {
 
     return(
         <div>
-            <h1>{playlist_id}</h1>
             <Player playlist_id={playlist_id}/>
         </div>
         )
