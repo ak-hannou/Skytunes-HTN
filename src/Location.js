@@ -13,6 +13,7 @@ import  { SpotifyLogic }  from "./SpotifyLogic";
 export function Location(props) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [temperature, setTemperature] = useState(0);
+  const [weather, setWeather] = useState('');
   const [icon, setIcon] = useState('');
   const [id, setId] = useState(0);
   
@@ -269,16 +270,16 @@ export function Location(props) {
       let lon = props.lon;
       let lat = props.lat;
 
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position){
-            lon = (position.coords.longitude);
-            lat= (position.coords.latitude);
+      // if (navigator.geolocation) {
+      //   navigator.geolocation.getCurrentPosition(function(position){
+      //       lon = (position.coords.longitude);
+      //       lat= (position.coords.latitude);
   
-        });
+      //   });
   
-      } else {
-        console.log("No location");
-      }
+      // } else {
+      //   console.log("No location");
+      // }
       
        fetch(`https://api.openweathermap.org/data/2.5/weather?appid=a5c0db8f6adb10375ec56cd08ea0dc41&lat=${lat}&lon=${lon}`)
       .then(res => res.json())
@@ -292,6 +293,7 @@ export function Location(props) {
           setTemperature(result.main.temp);
           setIcon(result.weather[0].icon);
           setId(result.weather[0].id);
+          setWeather(result);
 
         },
         // Note: it's important to handle errors here
@@ -318,7 +320,9 @@ export function Location(props) {
     return (
       
       <div>
-          <SpotifyLogic dance={danceability} energy={energy} valence={valence} word={word} token={props.token}/>
+        {weather ? (
+          <SpotifyLogic weather={weather} dance={danceability} energy={energy} valence={valence} word={word} token={props.token}/>
+          ):null}
       </div>
     );
   }

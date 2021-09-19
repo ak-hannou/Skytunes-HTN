@@ -61,7 +61,7 @@ export function SpotifyLogic(props) {
 
     return(
         <div>
-            <Player playlist_id={playlist_id}/>
+            <Player conditions={props.weather} playlist_id={playlist_id} token={props.token}/>
         </div>
         )
 }
