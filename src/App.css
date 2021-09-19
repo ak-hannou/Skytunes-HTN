@@ -35,6 +35,24 @@ svg {
   top: 0;
   left: 0;
 }
+.container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.spotify-button {
+  height: 50;
+  margin-top: 15;
+  border-radius: 25;
+  text-transform: none;
+  background-color: #f8f0e3;
+  color: #002966;
+  font-size: 15;
+}
 
 .App-link {
   color: #61dafb;
